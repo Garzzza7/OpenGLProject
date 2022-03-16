@@ -57,8 +57,8 @@ int main()
 	glViewport(0, 0, 1280, 720);
 
 
-
-
+	// Printign the current version of drivers etc...
+	std::cout << glGetString(GL_VERSION) << std::endl;
 	// Create Vertex Shader Object and get its reference
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	// Attach Vertex Shader source to the Vertex Shader Object
@@ -131,6 +131,7 @@ int main()
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
+		
 		
 		// Specify the color of the background
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
