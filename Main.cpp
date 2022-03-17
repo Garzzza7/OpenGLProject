@@ -17,7 +17,10 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
 "}\n\0";
 
-
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
 
 int main()
 {
@@ -44,6 +47,10 @@ int main()
 
 	// Introduce the window into the current context
 	glfwMakeContextCurrent(window);
+
+
+
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	//Load GLAD so it configures OpenGL
 	gladLoadGL();
