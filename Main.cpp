@@ -28,12 +28,18 @@ GLuint indices[] =
 	5, 4, 1 // Upper triangle
 };
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
 
 
 int main()
 {
 	// Initialize GLFW
 	glfwInit();
+	
+
 
 	// Tell GLFW what version of OpenGL we are using 
 	// In this case we are using OpenGL 3.3
@@ -44,7 +50,8 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create a GLFWwindow object of 800 by 800 pixels, naming it "YoutubeOpenGL"
-	GLFWwindow* window = glfwCreateWindow(800, 800, "YoutubeOpenGL", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 800, "IHopeItWorks", NULL, NULL);
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	// Error check if the window fails to create
 	if (window == NULL)
 	{
@@ -89,6 +96,7 @@ int main()
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
+		
 		// Specify the color of the background
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		// Clean the back buffer and assign the new color to it
