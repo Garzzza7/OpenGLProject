@@ -27,7 +27,7 @@ GLuint indices[] =
 	3, 2, 4, // Lower right triangle
 	5, 4, 1 // Upper triangle
 };
-
+//Function responsible for scaling depending on the window size
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
 	glViewport(0, 0, width, height);
@@ -51,6 +51,7 @@ int main()
 
 	// Create a GLFWwindow object of 800 by 800 pixels, naming it "YoutubeOpenGL"
 	GLFWwindow* window = glfwCreateWindow(800, 800, "IHopeItWorks", NULL, NULL);
+	//Calling the scaling functionw
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	// Error check if the window fails to create
 	if (window == NULL)
