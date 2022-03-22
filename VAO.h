@@ -3,7 +3,7 @@
 
 #include<glad/glad.h>
 #include"VBO.h"
-
+//Vertex Array Buffer
 class VAO
 {
 public:
